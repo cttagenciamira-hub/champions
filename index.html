@@ -9,7 +9,14 @@
   <meta name="keywords" content="artes marciais, muay thai, boxe, personal trainer, academia, luta" />
   <meta name="author" content="Champions Fighters Academy" />
   
+  <meta property="og:title" content="Champions Fighters Academy | A Casa dos Campeões">
+  <meta property="og:description" content="Evolução, disciplina e resultados reais. Estrutura completa de Muay Thai, Boxe e Studio Personal.">
+  <meta property="og:image" content="foto-hero-bg.webp">
+  <meta property="og:type" content="website">
+  
   <link rel="icon" type="image/webp" href="favicon.webp" />
+
+  <link rel="preload" as="image" href="foto-hero-bg.webp" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,7 +55,7 @@
     a { text-decoration: none; color: inherit; }
     ul { list-style: none; }
 
-    /* Novo Container com margens laterais garantidas */
+    /* Container com margens laterais garantidas */
     .container {
       width: 100%;
       max-width: 1180px;
@@ -143,18 +150,23 @@
       box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
-    .float-wa svg { width: 34px; height: 34px; fill: currentColor; }
+    .float-wa svg { 
+      width: 34px; 
+      height: 34px; 
+      fill: currentColor; 
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); /* Melhoria de contraste */
+    }
     .float-wa:hover { transform: scale(1.1) translateY(-5px); box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5); }
     .float-wa.hidden {
       opacity: 0; visibility: hidden; transform: scale(0.5) translateY(20px); pointer-events: none;
     }
 
-    /* Nova Estrutura Anti-Bug do Hero */
+    /* Estrutura Anti-Bug do Hero */
     .hero {
       position: relative; 
       min-height: 100vh;
       display: flex; 
-      flex-direction: column; /* Evita que o Navbar desça pro meio da tela */
+      flex-direction: column; 
       background: linear-gradient(rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.84)), url("foto-hero-bg.webp") center/cover no-repeat;
     }
     .hero__overlay {
@@ -177,21 +189,21 @@
       padding: 24px 0; animation: fadeDown 1s ease both;
     }
     
-    /* Logo Inteligente (Calcula o tamanho com base na tela) */
+    /* Logo Inteligente */
     .navbar__logo img {
-      height: clamp(45px, 6vw, 80px); /* Sempre 80px no PC, escala gradualmente no Celular */
+      height: clamp(45px, 6vw, 80px); 
       width: auto;
       filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
       object-fit: contain;
     }
 
-    /* Textos do Hero ancorados ao centro do espaço restante */
+    /* Textos do Hero */
     .hero__text { 
       flex: 1; 
       display: flex; 
       flex-direction: column; 
       justify-content: center; 
-      align-items: center; /* Centraliza botões e texto */
+      align-items: center; 
       max-width: 920px; 
       margin: 0 auto; 
       padding: 20px 0 60px; 
@@ -258,12 +270,32 @@
       background: linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.6)), url("foto-structure.webp") center/cover no-repeat;
       border: 1px solid var(--border); box-shadow: var(--shadow);
     }
+    
+    /* Selo de 500m² Responsivo (Ajuste Matemático Inteligente) */
     .structure__image-badge {
-      position: absolute; left: 24px; bottom: 24px; background: rgba(0,0,0,0.64);
-      border: 1px solid rgba(212,175,55,0.28); backdrop-filter: blur(4px);
-      color: var(--white); padding: 16px 18px; border-radius: 18px;
+      position: absolute; 
+      left: clamp(14px, 3vw, 24px); 
+      bottom: clamp(14px, 3vw, 24px); 
+      background: rgba(0,0,0,0.64);
+      border: 1px solid rgba(212,175,55,0.28); 
+      backdrop-filter: blur(4px);
+      color: var(--white); 
+      padding: clamp(10px, 2.5vw, 16px) clamp(12px, 3vw, 18px); 
+      border-radius: clamp(12px, 2vw, 18px);
     }
-    .structure__image-badge strong { font-family: "Anton", sans-serif; font-size: 2rem; color: var(--gold-soft); line-height: 1; }
+    .structure__image-badge strong { 
+      display: block;
+      font-family: "Anton", sans-serif; 
+      font-size: clamp(1.4rem, 5vw, 2rem); 
+      color: var(--gold-soft); 
+      line-height: 1; 
+      margin-bottom: 4px;
+    }
+    .structure__image-badge span { 
+      display: block;
+      font-size: clamp(0.75rem, 2.5vw, 0.92rem); 
+      color: var(--text-soft);
+    }
 
     /* Modalities */
     .modalities__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
@@ -377,6 +409,18 @@
     @keyframes floating { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
     @keyframes pulseGlow { 0%, 100% { opacity: 1; } 50% { opacity: 0.72; } }
 
+    /* Acessibilidade - Desativar animações se o usuário preferir menos movimento */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
     /* Responsivo - Tabletes e Telas Médias */
     @media (max-width: 992px) {
       .grid--2, .hours__grid, .check-list, .about__card, .structure__grid, .structure__cards, .location__grid {
@@ -394,18 +438,16 @@
       .modalities__grid { grid-template-columns: 1fr; }
     }
 
-    /* Responsivo - Smartphones Focados (Correção das Margens e Sobreposições) */
+    /* Responsivo - Smartphones Focados */
     @media (max-width: 640px) {
       .section { padding: 60px 0; }
       
       .hero h1 { font-size: 2.8rem; }
       .hero__text { padding: 10px 0 50px; }
       
-      /* Botões 100% da largura, mas respeitando o padding de segurança do .container */
       .btn { width: 100%; justify-content: center; }
       .hero__buttons, .cta__buttons { flex-direction: column; gap: 16px; }
       
-      /* Ajuste de espaçamento interno para as caixas não estourarem no celular */
       .structure__content, .modality-card__body, .location__grid { padding: 24px; }
       .about__card-item { padding: 20px; }
       .modality-card__image { height: 220px; }
@@ -543,7 +585,7 @@
         <div class="modalities__grid">
           <article class="modality-card modality-card--muay">
             <div class="modality-card__image">
-              <img src="foto-muay.webp" alt="Treino de Muay Thai">
+              <img src="foto-muay.webp" alt="Treino de Muay Thai" loading="lazy" decoding="async">
             </div>
             <div class="modality-card__body">
               <div class="modality-card__top">
@@ -568,7 +610,7 @@
 
           <article class="modality-card modality-card--boxe">
             <div class="modality-card__image">
-              <img src="foto-boxe.webp" alt="Treino de Boxe">
+              <img src="foto-boxe.webp" alt="Treino de Boxe" loading="lazy" decoding="async">
             </div>
             <div class="modality-card__body">
               <div class="modality-card__top">
@@ -593,7 +635,7 @@
 
           <article class="modality-card modality-card--highlight">
             <div class="modality-card__image">
-              <img src="foto-studio.webp" alt="Treino no Studio Personal">
+              <img src="foto-studio.webp" alt="Treino no Studio Personal" loading="lazy" decoding="async">
             </div>
             <div class="modality-card__body">
               <div class="modality-card__top">
@@ -646,6 +688,7 @@
 
           <div class="location__map">
             <iframe 
+              title="Mapa de localização da Champions Fighters Academy"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3674.2492770280456!2d-43.0906233!3d-22.940989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x99841801d0ab21%3A0xc3f17d5e492b4eb1!2sR.%20Fernandes%20Couto%2C%2045%20-%20Cachoeira%2C%20Niter%C3%B3i%20-%20RJ%2C%2024365-180!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
               allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
             </iframe>
@@ -693,40 +736,45 @@
   </footer>
 
   <script>
-    const reveals = document.querySelectorAll('.reveal');
-    function revealOnScroll() {
-      const trigger = window.innerHeight * 0.88;
-      reveals.forEach(item => {
-        const top = item.getBoundingClientRect().top;
-        if (top < trigger) {
-          item.classList.add('active');
-        }
-      });
-    }
-    window.addEventListener('scroll', revealOnScroll);
-    window.addEventListener('load', revealOnScroll);
-
-    const floatBtn = document.getElementById('float-wa');
-    const waButtons = document.querySelectorAll('.wa-btn-container a[href*="wa.me"]');
-    
-    let visibleCount = 0;
-    const observer = new IntersectionObserver((entries) => {
+    // Nova lógica de animação usando IntersectionObserver (Nativo, assíncrono e ultra-performático)
+    const revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          visibleCount++;
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target); // Para de observar após animar, economizando recursos
+        }
+      });
+    }, { 
+      rootMargin: "0px 0px -10% 0px", // Dispara quando o elemento está 10% dentro da tela
+      threshold: 0.1 
+    });
+
+    document.querySelectorAll('.reveal').forEach(item => {
+      revealObserver.observe(item);
+    });
+
+    // Lógica do Botão Flutuante blindada com Set() para evitar dessincronização
+    const floatBtn = document.getElementById('float-wa');
+    const waButtons = document.querySelectorAll('.wa-btn-container a[href*="wa.me"]');
+    const visibleWaButtons = new Set(); // O Set rastreia exatamente quais elementos estão na tela
+
+    const waObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          visibleWaButtons.add(entry.target);
         } else {
-          visibleCount = Math.max(0, visibleCount - 1);
+          visibleWaButtons.delete(entry.target);
         }
       });
       
-      if (visibleCount > 0) {
+      if (visibleWaButtons.size > 0) {
         floatBtn.classList.add('hidden');
       } else {
         floatBtn.classList.remove('hidden');
       }
     }, { rootMargin: "0px", threshold: 0.1 });
 
-    waButtons.forEach(btn => observer.observe(btn));
+    waButtons.forEach(btn => waObserver.observe(btn));
   </script>
 </body>
 </html>
