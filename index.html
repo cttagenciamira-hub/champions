@@ -9,9 +9,12 @@
   <meta name="keywords" content="artes marciais, muay thai, boxe, personal trainer, academia, luta" />
   <meta name="author" content="Champions Fighters Academy" />
   
+  <link rel="canonical" href="https://www.championsfighters.com.br/" />
+  
   <meta property="og:title" content="Champions Fighters Academy | A Casa dos Campeões">
   <meta property="og:description" content="Evolução, disciplina e resultados reais. Estrutura completa de Muay Thai, Boxe e Studio Personal.">
-  <meta property="og:image" content="logo.webp">
+  <meta property="og:image" content="https://www.championsfighters.com.br/foto-hero-bg.webp">
+  <meta property="og:url" content="https://www.championsfighters.com.br/">
   <meta property="og:type" content="website">
   
   <link rel="icon" type="image/webp" href="favicon.webp" />
@@ -151,10 +154,8 @@
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
     .float-wa svg { 
-      width: 34px; 
-      height: 34px; 
-      fill: currentColor; 
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); /* Melhoria de contraste */
+      width: 34px; height: 34px; fill: currentColor; 
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
     }
     .float-wa:hover { transform: scale(1.1) translateY(-5px); box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5); }
     .float-wa.hidden {
@@ -163,10 +164,7 @@
 
     /* Estrutura Anti-Bug do Hero */
     .hero {
-      position: relative; 
-      min-height: 100vh;
-      display: flex; 
-      flex-direction: column; 
+      position: relative; min-height: 100vh; display: flex; flex-direction: column; 
       background: linear-gradient(rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.84)), url("foto-hero-bg.webp") center/cover no-repeat;
     }
     .hero__overlay {
@@ -175,63 +173,39 @@
                   radial-gradient(circle at bottom left, rgba(212, 175, 55, 0.10), transparent 24%);
       pointer-events: none; animation: pulseGlow 6s ease-in-out infinite;
     }
-    .hero__content { 
-      flex: 1; 
-      display: flex; 
-      flex-direction: column; 
-      position: relative; 
-      z-index: 2; 
-    }
+    .hero__content { flex: 1; display: flex; flex-direction: column; position: relative; z-index: 2; }
 
     /* Navbar */
-    .navbar {
-      display: flex; align-items: center; justify-content: center;
-      padding: 24px 0; animation: fadeDown 1s ease both;
-    }
-    
-    /* Logo Inteligente */
-    .navbar__logo img {
-      height: clamp(45px, 6vw, 80px); 
-      width: auto;
-      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
-      object-fit: contain;
-    }
+    .navbar { display: flex; align-items: center; justify-content: center; padding: 24px 0; animation: fadeDown 1s ease both; }
+    .navbar__logo img { 
+  height: clamp(45px, 6vw, 80px); 
+  width: auto; 
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5)); 
+  object-fit: contain; 
+  border-radius: 12px; /* <-- O detalhe arredondado aqui! Você pode aumentar ou diminuir esse valor (ex: 8px, 16px) */
+}
 
     /* Textos do Hero */
     .hero__text { 
-      flex: 1; 
-      display: flex; 
-      flex-direction: column; 
-      justify-content: center; 
-      align-items: center; 
-      max-width: 920px; 
-      margin: 0 auto; 
-      padding: 20px 0 60px; 
-      text-align: center; 
+      flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; 
+      max-width: 920px; margin: 0 auto; padding: 20px 0 60px; text-align: center; 
     }
     .hero .eyebrow {
-      color: var(--gold-soft); font-weight: 800; letter-spacing: 0.18em;
-      margin-bottom: 8px; 
-      font-size: 0.95rem; text-shadow: 0 3px 10px rgba(0,0,0,0.45);
-      animation: fadeText 1.2s ease both;
+      color: var(--gold-soft); font-weight: 800; letter-spacing: 0.18em; margin-bottom: 8px; 
+      font-size: 0.95rem; text-shadow: 0 3px 10px rgba(0,0,0,0.45); animation: fadeText 1.2s ease both;
     }
     .hero h1 {
-      font-family: "Anton", sans-serif; font-size: clamp(3.2rem, 8vw, 5.8rem);
-      line-height: 1; text-transform: uppercase; letter-spacing: 0.03em;
-      margin-bottom: 22px; text-align: center;
+      font-family: "Anton", sans-serif; font-size: clamp(3.2rem, 8vw, 5.8rem); line-height: 1; 
+      text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 22px; text-align: center;
       background: linear-gradient(180deg, #fff8dd 0%, #f3dc8a 45%, #d4af37 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       text-shadow: 0 5px 25px rgba(0,0,0,0.45); animation: fadeText 1.4s ease both;
     }
     .hero__description {
       max-width: 760px; color: #f0f0f0; font-size: 1.12rem; margin: 0 auto 32px;
-      text-align: center; text-shadow: 0 3px 12px rgba(0,0,0,0.45);
-      animation: fadeText 1.7s ease both;
+      text-align: center; text-shadow: 0 3px 12px rgba(0,0,0,0.45); animation: fadeText 1.7s ease both;
     }
-    .hero__buttons {
-      display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; width: 100%;
-      animation: fadeText 2s ease both;
-    }
+    .hero__buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; width: 100%; animation: fadeText 2s ease both; }
 
     /* Secoes com Imagem Local */
     .about { background: linear-gradient(rgba(6,6,6,0.92), rgba(10,10,10,0.95)), url("foto-about-bg.webp") center/cover no-repeat; }
@@ -250,6 +224,44 @@
     .about__card-item:hover { transform: translateY(-6px); border-color: rgba(212,175,55,0.35); box-shadow: var(--shadow-gold); }
     .about__card-item strong { display: block; margin-bottom: 10px; font-size: 1.05rem; color: var(--white); }
     .about__card-item span { color: var(--text-soft); font-size: 0.95rem; }
+    
+    /* Box destaque inclusão (TDAH e Autismo) Full-Width Centralizado */
+    .about__inclusion-box {
+      position: relative;
+      margin-top: 50px;
+      padding: clamp(24px, 4vw, 36px);
+      background: rgba(18, 18, 18, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 20px;
+      text-align: center;
+      z-index: 1; /* Garante que fique acima do glow */
+    }
+    .about__inclusion-box p {
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: clamp(1rem, 2vw, 1.1rem);
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+    .about__inclusion-box strong { color: var(--white); font-weight: 700; }
+
+    /* O pulo do gato: Sombreado Dinâmico com as cores do Quebra-Cabeça da Neurodivergência */
+    .about__inclusion-box::before {
+      content: "";
+      position: absolute;
+      inset: -2px; /* Vazamento do efeito luminoso */
+      border-radius: 22px;
+      /* Vermelho, Amarelo, Azul e Verde */
+      background: linear-gradient(90deg, #ff3b3b, #ffcc00, #3b82f6, #10b981);
+      z-index: -1;
+      filter: blur(12px);
+      opacity: 0.35; /* Fica sutil de base */
+      transition: all 0.4s ease;
+    }
+    .about__inclusion-box:hover::before {
+      opacity: 0.70; /* Acende no hover */
+      filter: blur(16px);
+    }
 
     /* Structure */
     .structure__grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 30px; align-items: stretch; }
@@ -271,31 +283,17 @@
       border: 1px solid var(--border); box-shadow: var(--shadow);
     }
     
-    /* Selo de 500m² Responsivo (Ajuste Matemático Inteligente) */
     .structure__image-badge {
-      position: absolute; 
-      left: clamp(14px, 3vw, 24px); 
-      bottom: clamp(14px, 3vw, 24px); 
-      background: rgba(0,0,0,0.64);
-      border: 1px solid rgba(212,175,55,0.28); 
-      backdrop-filter: blur(4px);
-      color: var(--white); 
-      padding: clamp(10px, 2.5vw, 16px) clamp(12px, 3vw, 18px); 
-      border-radius: clamp(12px, 2vw, 18px);
+      position: absolute; left: clamp(14px, 3vw, 24px); bottom: clamp(14px, 3vw, 24px); 
+      background: rgba(0,0,0,0.64); border: 1px solid rgba(212,175,55,0.28); 
+      backdrop-filter: blur(4px); color: var(--white); 
+      padding: clamp(10px, 2.5vw, 16px) clamp(12px, 3vw, 18px); border-radius: clamp(12px, 2vw, 18px);
     }
     .structure__image-badge strong { 
-      display: block;
-      font-family: "Anton", sans-serif; 
-      font-size: clamp(1.4rem, 5vw, 2rem); 
-      color: var(--gold-soft); 
-      line-height: 1; 
-      margin-bottom: 4px;
+      display: block; font-family: "Anton", sans-serif; font-size: clamp(1.4rem, 5vw, 2rem); 
+      color: var(--gold-soft); line-height: 1; margin-bottom: 4px;
     }
-    .structure__image-badge span { 
-      display: block;
-      font-size: clamp(0.75rem, 2.5vw, 0.92rem); 
-      color: var(--text-soft);
-    }
+    .structure__image-badge span { display: block; font-size: clamp(0.75rem, 2.5vw, 0.92rem); color: var(--text-soft); }
 
     /* Modalities */
     .modalities__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
@@ -313,12 +311,12 @@
     .modality-card__image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
     .modality-card:hover .modality-card__image img { transform: scale(1.08); }
     .modality-card__body { padding: 30px; position: relative; z-index: 1; display: flex; flex-direction: column; flex-grow: 1; }
-    .modality-card__top { display: flex; flex-direction: column; gap: 12px; margin-bottom: 18px; }
-    .modality-card h3 { font-size: 1.8rem; line-height: 1.1; color: var(--white); }
+    .modality-card__top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+    .modality-card h3 { font-size: 1.8rem; line-height: 1.1; color: var(--white); margin: 0; }
     .modality-card p { color: var(--text-soft); margin-bottom: 18px; flex-grow: 1; }
     .modality-card ul { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
-    .modality-card ul li { color: var(--white); padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.07); }
-    .modality-card ul li strong { color: var(--gold-soft); }
+    .modality-card ul li { color: var(--white); padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.07); font-size: 0.92rem; }
+    .modality-card ul li strong { color: var(--gold-soft); float: right; }
     
     .modality-card--highlight { border-color: rgba(212, 175, 55, 0.30); background: linear-gradient(180deg, rgba(212,175,55,0.10), rgba(255,255,255,0.03)); }
     .modality-card--muay:hover { border-color: rgba(255, 90, 90, 0.4); box-shadow: 0 20px 45px rgba(255, 90, 90, 0.14); }
@@ -329,32 +327,16 @@
     .modality-card--highlight:hover { box-shadow: 0 20px 45px rgba(212,175,55,0.16); }
 
     .tag {
-      display: inline-flex; width: fit-content; padding: 8px 12px; border-radius: 999px;
-      background: rgba(255, 255, 255, 0.09); color: var(--white); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.1em;
+      display: inline-flex; width: fit-content; padding: 6px 12px; border-radius: 999px;
+      background: rgba(255, 255, 255, 0.09); color: var(--white); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.1em; margin: 0;
     }
     .tag--gold { background: rgba(212, 175, 55, 0.16); color: var(--gold-soft); }
 
-    .modality-icon {
-      width: 56px; height: 56px; border-radius: 16px; display: flex; align-items: center; justify-content: center;
-      margin-bottom: 10px; font-size: 1.4rem; font-weight: 800; color: #fff; border: 1px solid rgba(255,255,255,0.08);
-      animation: floating 3s ease-in-out infinite;
-    }
-    .icon-muay { background: linear-gradient(135deg, rgba(255,70,70,0.25), rgba(255,255,255,0.06)); }
-    .icon-boxe { background: linear-gradient(135deg, rgba(60,140,255,0.25), rgba(255,255,255,0.06)); animation-delay: 0.5s; }
-    .icon-studio { background: linear-gradient(135deg, rgba(212,175,55,0.20), rgba(255,255,255,0.06)); animation-delay: 1.3s; }
-
     /* Localização e Horários */
     .location__grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      align-items: stretch;
-      background: rgba(18, 18, 18, 0.92);
-      border: 1px solid var(--border);
-      border-radius: 30px;
-      padding: 30px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(4px);
+      display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: stretch;
+      background: rgba(18, 18, 18, 0.92); border: 1px solid var(--border);
+      border-radius: 30px; padding: 30px; box-shadow: var(--shadow); backdrop-filter: blur(4px);
     }
     
     .location__info { display: flex; flex-direction: column; justify-content: center; }
@@ -380,14 +362,34 @@
       border: 1px solid var(--border); filter: invert(90%) hue-rotate(180deg) contrast(85%); 
     }
 
+    /* Família Champions (Carrossel Infinito CSS) */
+    .family { background: var(--bg); padding-bottom: 40px; }
+    .carousel-container {
+      position: relative; width: 100%; overflow: hidden; margin-top: 40px;
+      mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    }
+    .carousel-track {
+      display: flex; width: max-content; animation: scrollTrack 35s linear infinite; 
+    }
+    .carousel-track:hover { animation-play-state: paused; }
+    .carousel-slide { display: flex; gap: 24px; padding-right: 24px; }
+    .carousel-slide img {
+      width: clamp(260px, 60vw, 420px); height: clamp(200px, 45vw, 320px);
+      object-fit: cover; border-radius: 24px; border: 1px solid var(--border);
+      box-shadow: var(--shadow); transition: all 0.4s ease; background: var(--bg-soft);
+    }
+    .carousel-slide img:hover { border-color: rgba(212, 175, 55, 0.35); transform: translateY(-5px); }
+    @keyframes scrollTrack { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
     /* CTA */
     .cta__box { text-align: center; max-width: 860px; margin: 0 auto; }
     .cta__box p:not(.section__label) { max-width: 650px; margin: 0 auto 28px; }
     .cta__buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; width: 100%; }
 
     /* Footer */
-    .footer { background: #050505; border-top: 1px solid var(--border); padding: 40px 0; }
-    .footer__content { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; align-items: center; }
+    .footer { background: #050505; border-top: 1px solid var(--border); padding: 40px 0 20px; }
+    .footer__content { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; align-items: center; margin-bottom: 30px; }
     .footer__info h3 { margin-bottom: 8px; font-size: 1.2rem; color: var(--white); }
     .footer__info p { color: var(--text-soft); font-size: 0.95rem; line-height: 1.8; }
     
@@ -400,60 +402,58 @@
     .social-icon svg { width: 22px; height: 22px; fill: var(--white); transition: 0.3s; }
     .social-icon:hover { background: var(--gold-soft); transform: translateY(-4px); }
     .social-icon:hover svg { fill: #111; }
+    
+    /* Direitos Reservados Atualizados */
+    .footer__copyright {
+      text-align: center; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.05);
+      color: var(--text-muted); font-size: 0.85rem;
+    }
 
     /* Animações Gerais */
     .reveal { opacity: 0; transform: translateY(40px); transition: all 0.9s ease; }
     .reveal.active { opacity: 1; transform: translateY(0); }
     @keyframes fadeDown { from { opacity: 0; transform: translateY(-25px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes fadeText { 0% { opacity: 0; transform: translateY(26px); } 100% { opacity: 1; transform: translateY(0); } }
-    @keyframes floating { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
     @keyframes pulseGlow { 0%, 100% { opacity: 1; } 50% { opacity: 0.72; } }
 
-    /* Acessibilidade - Desativar animações se o usuário preferir menos movimento */
+    /* Acessibilidade */
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important; animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important; scroll-behavior: auto !important;
       }
       .reveal { opacity: 1; transform: none; transition: none; }
+      .carousel-track { animation: none; width: 100%; overflow-x: auto; scroll-snap-type: x mandatory; }
+      .carousel-slide img { scroll-snap-align: center; }
     }
 
-    /* Responsivo - Tabletes e Telas Médias */
+    /* Responsivo */
     @media (max-width: 992px) {
-      .grid--2, .hours__grid, .check-list, .about__card, .structure__grid, .structure__cards, .location__grid {
-        grid-template-columns: 1fr;
-      }
+      .grid--2, .hours__grid, .check-list, .about__card, .structure__grid, .structure__cards, .location__grid { grid-template-columns: 1fr; }
       .modalities__grid { grid-template-columns: repeat(2, 1fr); }
       .hero { min-height: auto; }
       .structure__image { min-height: 340px; }
       .location__grid { padding: 24px; }
       .location__map iframe { min-height: 300px; }
     }
-
-    /* Responsivo - Intermediário para Modalidades */
     @media (max-width: 768px) {
       .modalities__grid { grid-template-columns: 1fr; }
     }
-
-    /* Responsivo - Smartphones Focados */
     @media (max-width: 640px) {
       .section { padding: 60px 0; }
-      
       .hero h1 { font-size: 2.8rem; }
       .hero__text { padding: 10px 0 50px; }
-      
       .btn { width: 100%; justify-content: center; }
       .hero__buttons, .cta__buttons { flex-direction: column; gap: 16px; }
-      
       .structure__content, .modality-card__body, .location__grid { padding: 24px; }
       .about__card-item { padding: 20px; }
       .modality-card__image { height: 220px; }
-      
       .footer__content { flex-direction: column; text-align: center; }
       .footer__socials { justify-content: center; margin-top: 16px; }
+      .carousel-slide img { border-radius: 18px; }
+      .modality-card ul li { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+      .modality-card ul li strong { float: none; color: var(--white); font-weight: 800; }
     }
   </style>
 </head>
@@ -491,37 +491,43 @@
 
   <main>
     <section class="section about reveal" id="sobre">
-      <div class="container grid grid--2">
-        <div class="section__content">
-          <p class="section__label">QUEM SOMOS</p>
-          <h2>Muito mais que uma academia. Um ambiente de transformação.</h2>
-          <p>
-            A Champions Fighters Academy é para quem busca saúde, confiança e evolução real. 
-            Oferecemos estrutura completa e acompanhamento de qualidade para você treinar no seu ritmo.
-          </p>
-          <p>
-            Seja para aprender uma arte marcial, emagrecer ou elevar o desempenho, 
-            nosso ambiente é preparado para receber desde iniciantes até praticantes avançados.
-          </p>
-        </div>
+      <div class="container">
+        <div class="grid grid--2">
+          <div class="section__content">
+            <p class="section__label">QUEM SOMOS</p>
+            <h2>Muito mais que uma academia. Um ambiente de transformação.</h2>
+            <p>
+              A Champions Fighters Academy é para quem busca saúde, confiança e evolução real. 
+              Oferecemos estrutura completa e acompanhamento de qualidade para você treinar no seu ritmo.
+            </p>
+            <p>
+              Seja para aprender uma arte marcial, emagrecer ou elevar o desempenho, 
+              nosso ambiente é preparado para receber desde iniciantes até praticantes avançados.
+            </p>
+          </div>
 
-        <div class="about__card">
-          <div class="about__card-item">
-            <strong>Estrutura moderna</strong>
-            <span>Visual premium e clima de alta performance.</span>
+          <div class="about__card">
+            <div class="about__card-item">
+              <strong>Estrutura moderna</strong>
+              <span>Visual premium e clima de alta performance.</span>
+            </div>
+            <div class="about__card-item">
+              <strong>Equipe preparada</strong>
+              <span>Atendimento direcionado para o seu objetivo.</span>
+            </div>
+            <div class="about__card-item">
+              <strong>Modalidades completas</strong>
+              <span>Lutas e treino personalizado em um só lugar.</span>
+            </div>
+            <div class="about__card-item">
+              <strong>Experiência Champions</strong>
+              <span>Disciplina, energia e evolução constante.</span>
+            </div>
           </div>
-          <div class="about__card-item">
-            <strong>Equipe preparada</strong>
-            <span>Atendimento direcionado para o seu objetivo.</span>
-          </div>
-          <div class="about__card-item">
-            <strong>Modalidades completas</strong>
-            <span>Lutas e treino personalizado em um só lugar.</span>
-          </div>
-          <div class="about__card-item">
-            <strong>Experiência Champions</strong>
-            <span>Disciplina, energia e evolução constante.</span>
-          </div>
+        </div>
+        
+        <div class="about__inclusion-box">
+          <p><strong>Espaço Inclusivo:</strong> Somos também um ambiente seguro, didático e acolhedor para crianças e adolescentes com <strong>TDAH e Autismo</strong>. Acreditamos no esporte como ferramenta de desenvolvimento cognitivo e motor para todos.</p>
         </div>
       </div>
     </section>
@@ -589,16 +595,16 @@
             </div>
             <div class="modality-card__body">
               <div class="modality-card__top">
-                <div class="modality-icon icon-muay">MT</div>
-                <span class="tag">LUTA</span>
                 <h3>Muay Thai</h3>
+                <span class="tag">LUTA</span>
               </div>
               <p>
                 Treinos dinâmicos para melhorar o condicionamento, aliviar o estresse e aprender defesa pessoal.
               </p>
               <ul>
-                <li>Segunda a sexta: <strong>7h</strong></li>
-                <li>Segunda a quinta: <strong>19h</strong></li>
+                <li>Adultos e Jovens (Seg a Sex): <strong>07h</strong></li>
+                <li>Adultos e Jovens (Seg a Qui): <strong>19h</strong></li>
+                <li>Infantil (5+ anos | Seg e Qua): <strong>18h</strong></li>
               </ul>
               <div class="wa-btn-container">
                 <a href="https://wa.me/5521972177797?text=Olá!%20Me%20interessei%20pelo%20Muay%20Thai%20e%20gostaria%20de%20mais%20informações." target="_blank" rel="noopener noreferrer" class="btn btn--card btn--muay">
@@ -614,16 +620,15 @@
             </div>
             <div class="modality-card__body">
               <div class="modality-card__top">
-                <div class="modality-icon icon-boxe">BX</div>
-                <span class="tag">LUTA</span>
                 <h3>Boxe</h3>
+                <span class="tag">LUTA</span>
               </div>
               <p>
                 Trabalhe coordenação, agilidade e gasto calórico com foco em técnica e movimentação.
               </p>
               <ul>
-                <li>Segunda a sexta: <strong>8h</strong></li>
-                <li>Segunda, quarta e quinta: <strong>21h</strong></li>
+                <li>Jovens e Adultos (Ter e Qui): <strong>08h manhã</strong></li>
+                <li>Jovens e Adultos (Seg, Qua e Qui): <strong>21h noite</strong></li>
               </ul>
               <div class="wa-btn-container">
                 <a href="https://wa.me/5521972177797?text=Olá!%20Me%20interessei%20pelo%20Boxe%20e%20gostaria%20de%20mais%20informações." target="_blank" rel="noopener noreferrer" class="btn btn--card btn--boxe">
@@ -639,16 +644,15 @@
             </div>
             <div class="modality-card__body">
               <div class="modality-card__top">
-                <div class="modality-icon icon-studio">SP</div>
-                <span class="tag tag--gold">PERSONAL</span>
                 <h3>Studio Personal</h3>
+                <span class="tag tag--gold">PERSONAL</span>
               </div>
               <p>
                 Atendimento individualizado com treinos ajustados ao seu objetivo e nível de condicionamento.
               </p>
               <ul>
-                <li>Segunda a sexta: <strong>6h às 12h</strong></li>
-                <li>Segunda a quinta: <strong>16h às 22h</strong></li>
+                <li>Segunda a Sexta: <strong>06h às 12h</strong></li>
+                <li>Segunda a Quinta: <strong>16h às 22h</strong></li>
               </ul>
               <div class="wa-btn-container">
                 <a href="https://wa.me/5521972177797?text=Olá!%20Gostaria%20de%20saber%20como%20funciona%20o%20Studio%20Personal." target="_blank" rel="noopener noreferrer" class="btn btn--card btn--personal">
@@ -689,9 +693,36 @@
           <div class="location__map">
             <iframe 
               title="Mapa de localização da Champions Fighters Academy"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3674.2492770280456!2d-43.0906233!3d-22.940989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x99841801d0ab21%3A0xc3f17d5e492b4eb1!2sR.%20Fernandes%20Couto%2C%2045%20-%20Cachoeira%2C%20Niter%C3%B3i%20-%20RJ%2C%2024365-180!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.0244637385294!2d-43.0812002!3d-22.9124685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x99853db316990b%3A0xc6c6fa530e8d75!2sChampions%20Fighters!5e0!3m2!1spt-BR!2sbr!4v1773603290594!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" 
               allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
             </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section family reveal" id="familia">
+      <div class="container">
+        <div class="section__heading center">
+          <p class="section__label">FAMÍLIA CHAMPIONS</p>
+          <h2>Nossa vivência no tatame</h2>
+          <p>Mais do que treinos, construímos uma comunidade unida pelo propósito de evoluir diariamente.</p>
+        </div>
+      </div>
+
+      <div class="carousel-container">
+        <div class="carousel-track">
+          <div class="carousel-slide">
+            <img src="foto-familia-1.webp" alt="Alunos da Champions focados no treino" loading="lazy" decoding="async">
+            <img src="foto-familia-2.webp" alt="Momento de descontração e união" loading="lazy" decoding="async">
+            <img src="foto-familia-3.webp" alt="Treino dinâmico na academia" loading="lazy" decoding="async">
+            <img src="foto-familia-4.webp" alt="Nossa equipe de professores e alunos" loading="lazy" decoding="async">
+          </div>
+          <div class="carousel-slide">
+            <img src="foto-familia-1.webp" alt="Alunos da Champions focados no treino" loading="lazy" decoding="async">
+            <img src="foto-familia-2.webp" alt="Momento de descontração e união" loading="lazy" decoding="async">
+            <img src="foto-familia-3.webp" alt="Treino dinâmico na academia" loading="lazy" decoding="async">
+            <img src="foto-familia-4.webp" alt="Nossa equipe de professores e alunos" loading="lazy" decoding="async">
           </div>
         </div>
       </div>
@@ -714,38 +745,43 @@
   </main>
 
   <footer class="footer">
-    <div class="container footer__content">
-      <div class="footer__info">
-        <h3>Champions Fighters Academy</h3>
-        <p>Rua Fernandes Couto, 45 – Cachoeira<br>Niterói, RJ</p>
-        <p style="margin-top: 8px;"><strong>WhatsApp:</strong> (21) 97217-7797</p>
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__info">
+          <h3>Champions Fighters Academy</h3>
+          <p>Rua Fernandes Couto, 45 – Cachoeira<br>Niterói, RJ</p>
+          <p style="margin-top: 8px;"><strong>WhatsApp:</strong> (21) 97217-7797</p>
+        </div>
+        
+        <div class="footer__socials">
+          <a href="https://www.instagram.com/champions.fighters/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://facebook.com/p/Champions-Fighters-61561959184150" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
+          </a>
+          <a href="https://wa.me/5521972177797" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="WhatsApp">
+            <svg viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+          </a>
+        </div>
       </div>
       
-      <div class="footer__socials">
-        <a href="https://instagram.com/seuinstagram" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
-          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-        </a>
-        <a href="https://facebook.com/seufacebook" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
-          <svg viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
-        </a>
-        <a href="https://wa.me/5521972177797" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="WhatsApp">
-          <svg viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
-        </a>
+      <div class="footer__copyright">
+        © 2026 Champions Fighters Academy. Todos os direitos reservados.
       </div>
     </div>
   </footer>
 
   <script>
-    // Nova lógica de animação usando IntersectionObserver (Nativo, assíncrono e ultra-performático)
     const revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
-          observer.unobserve(entry.target); // Para de observar após animar, economizando recursos
+          observer.unobserve(entry.target); 
         }
       });
     }, { 
-      rootMargin: "0px 0px -10% 0px", // Dispara quando o elemento está 10% dentro da tela
+      rootMargin: "0px 0px -10% 0px", 
       threshold: 0.1 
     });
 
@@ -753,10 +789,9 @@
       revealObserver.observe(item);
     });
 
-    // Lógica do Botão Flutuante blindada com Set() para evitar dessincronização
     const floatBtn = document.getElementById('float-wa');
     const waButtons = document.querySelectorAll('.wa-btn-container a[href*="wa.me"]');
-    const visibleWaButtons = new Set(); // O Set rastreia exatamente quais elementos estão na tela
+    const visibleWaButtons = new Set(); 
 
     const waObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
